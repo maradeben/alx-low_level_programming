@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 /**
- * Function printing info about programming
+ * main - short program
+ * Description: Function printing info about programming
+ * Return: returns 0 when run sucessfully
  */
 int main(void)
 {
