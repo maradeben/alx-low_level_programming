@@ -9,15 +9,15 @@
  */
 void print_to_98(int n)
 {
-	int h, t, u; /* hundreds, tens & units */
+	int i, h, t, u; /* hundreds, tens & units */
 
 	if (n < 0)
 		_putchar('-');
-	for (n; n <= 98; n++)
+	for (i = n; i <= 98; i++)
 	{
-		h = n / 100;
-		t = n / 10;
-		u = n % 10;
+		h = i / 100;
+		t = i / 10;
+		u = i % 10;
 
 		if (h != 0)
 		{
@@ -37,7 +37,7 @@ void print_to_98(int n)
 				u *= -1;
 			_putchar(u + '0');
 		}
-		if (n < 98)
+		if (i < 98)
 		{
 			_putchar(' ');
 			_putchar(',');
