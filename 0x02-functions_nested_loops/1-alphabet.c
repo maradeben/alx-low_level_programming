@@ -6,7 +6,7 @@
  * Description: prints alphabets
  * Return: returns 0 when run sucessfully
  */
-int main(void)
+void print_alphabet(void)
 {
 	char c;
 
@@ -15,6 +15,4 @@ int main(void)
 		_putchar(c);
 	}
 	_putchar('\n');
-
-	return (0);
 }
