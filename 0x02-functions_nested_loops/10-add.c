@@ -8,7 +8,7 @@
  * Description: compute the sum of two ints
  * Return: sum
  */
-void add(int x, int y)
+int add(int x, int y)
 {
 	return (x + y);
 }
