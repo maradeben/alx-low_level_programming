@@ -36,10 +36,12 @@ void print_to_98(int n)
 			if (u < 0)
 				u *= -1;
 			_putchar(u + '0');
+		}
 		if (n < 98)
 		{
 			_putchar(' ');
 			_putchar(',');
 		}
+	}
 
 }
