@@ -2,25 +2,24 @@
 #include "main.h"
 
 /**
- * print_last_digit - check last digit
- * Description: computes last digit of number
- * @n: a number
- * Return: returns last digit of number
+ * jack_bauer - time printer
+ * Description: prints minutes of day
+ * Return: void returns none
  */
 void jack_bauer(void)
 {
-	int i;
-	int j;
+	int hh, mm;
 
-	for (i = 0; i < 24; i++)
+	for (hh = 0; hh < 24; hh++)
 	{
-		for (j = 0; j < 60; j++)
+		for (mm = 0; mm < 60; mm++)
 		{
-			if (i <= 9)
-				_putchar('0');
-			_putchar(i + '0');
+			_putchar((hh / 10) + '0');
+			_putchar((hh % 10) + '0');
 			_putchar(':');
-			_putchar(j + '0');
+			_putchar((mm / 10) + '0');
+			_putchar((mm % 10) + '0');
+			_putchar('\n');
 		}
 	}
 }
