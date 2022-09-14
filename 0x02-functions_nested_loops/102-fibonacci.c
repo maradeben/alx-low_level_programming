@@ -10,12 +10,12 @@ int fibonacci(int);
 
 int main(void)
 {
-	int fib, nm
+	int fib, n;
 
 	for (n = 0; n <=50; n++)
 	{
 		fib = fibonacci(n);
-		printf("%d\n, ", fib);
+		printf("%d, ", fib);
 	}
 	return (0);
 }
