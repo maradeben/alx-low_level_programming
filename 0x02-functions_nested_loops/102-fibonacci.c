@@ -10,10 +10,13 @@ int fibonacci(int);
 
 int main(void)
 {
-	int fib = fibonacci(50);
+	int fib, nm
 
-	printf("%d\n", fib);
-
+	for (n = 0; n <=50; n++)
+	{
+		fib = fibonacci(n);
+		printf("%d\n, ", fib);
+	}
 	return (0);
 }
 
