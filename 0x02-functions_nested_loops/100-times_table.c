@@ -7,11 +7,11 @@
  * @n: integer parameter
  * Return: void returns none
  */
-void times_table(int n)
+void print_times_table(int n)
 {
-	int i, j, p;
-	
-	if ((n >= 0) && (n < 15))
+	int i, j, p; /* p for product */
+
+	if ((n >= 0) && (n <= 15))
 	{
 		for (i = 0; i <= n; i++)
 		{
@@ -23,19 +23,17 @@ void times_table(int n)
 					_putchar(',');
 					_putchar(' ');
 					if ((p / 100) == 0)
-					{
 						_putchar(' ');
-						if ((p / 10) == 0)
-							_putchar(' ');
-					}
+					if ((p / 10) == 0)
+						_putchar(' ');
 				}
-				if (p > 99)
+
+				if (p >= 100)
 					_putchar((p / 100) + '0');
-				if (p > 9)
+				if (p >= 10)
 					_putchar((p / 10) + '0');
 				_putchar((p % 10) + '0');
 			}
-			_putchar('\n');
 		}
 	}
 }
