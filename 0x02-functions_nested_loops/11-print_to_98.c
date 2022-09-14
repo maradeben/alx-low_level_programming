@@ -9,38 +9,21 @@
  */
 void print_to_98(int n)
 {
-	int i, h, t, u; /* hundreds, tens & units */
-
-	if (n < 0)
-		_putchar('-');
-	for (i = n; i <= 98; i++)
+	if (n <= 98)
 	{
-		h = i / 100;
-		t = i / 10;
-		u = i % 10;
+		while (n <= 98)
+		{
+			printf("%d, ", n);
+			n++;
+		}
+	}
 
-		if (h != 0)
+	else if (n > 98)
+	{
+		while (n >= 98)
 		{
-			if (h < 0)
-				h *= -1;
-			_putchar(h + '0');
-		}
-		if (t != 0)
-		{
-			if (t < 0)
-				t *= -1;
-			_putchar(t + '0');
-		}
-		if (u != 0)
-		{
-			if (u < 0)
-				u *= -1;
-			_putchar(u + '0');
-		}
-		if (i < 98)
-		{
-			_putchar(' ');
-			_putchar(',');
+			printf("%d, ",n);
+			n--;
 		}
 	}
 
