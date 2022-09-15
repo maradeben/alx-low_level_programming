@@ -4,6 +4,7 @@
 /**
  * print_line - short program
  * Description: print a line n * '_' long
+ * @n: length of line
  * Return: no return
  */
 void print_line(int n)
