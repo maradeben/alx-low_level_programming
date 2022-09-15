@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _digit - check case
+ * _isdigit - check case
  * Description: prints alphabets 10x
  * @c: an ASCII character
  * Return: 1 if it's uppercase, 0 otherwise
