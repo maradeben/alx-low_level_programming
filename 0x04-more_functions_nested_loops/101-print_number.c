@@ -19,7 +19,7 @@ void print_number(int n)
 		tracker *= -1;
 	}
 
-	while (tracker > 10)
+	while (tracker >= 10)
 	{
 		tracker /= 10;
 		place *= 10;
