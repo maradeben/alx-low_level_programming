@@ -17,12 +17,12 @@ void puts_half(char *str)
 		count++;
 	}
 	/* count -= 1; */
-
+	
 	/* next determine half of length */
 	if (count % 2 == 0)
 		i = count / 2;
 	else
-		i = (count - 1) / 2;
+		i = (count / 2) + 1;
 
 	/* finally print second half of string */
 	while (i < count)
