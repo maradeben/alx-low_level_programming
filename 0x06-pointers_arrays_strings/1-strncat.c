@@ -22,7 +22,7 @@ char *_strncat(char *dest, char *src, int n)
 		s_c++;
 
 
-	while (tracker < n)
+	while (tracker < n && tracker < s_c)
 	{
 		*(dest + d_c) = src[tracker];
 		d_c++;
