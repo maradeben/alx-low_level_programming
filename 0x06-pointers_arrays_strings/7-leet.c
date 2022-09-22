@@ -8,23 +8,26 @@
 
 char *leet(char *s)
 {
-	int i;
+	int s_t = 0,  a_t = 0, l = 5;
+	/* string tracker, array tracker, array length */
+	char str[5] = {'A', 'E', 'O', 'T', 'L'};
+	char num[5] = {'4', '3', '0', '7', '1'};
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[s_t])
 	{
-		if (s[i] == 'a' || s[i] == 'A')
-			s[i] = '4';
-		if (s[i] == 'e' || s[i] == 'E')
-			s[i] = '3';
-		if (s[i] == 'o' || s[i] == 'O')
-			s[i] = '0';
-		if (s[i] == 't' || s[i] == 'T')
-			s[i] = '7';
-		if (s[i] == 'l' || s[i] == 'L')
-			s[i] = '1';
+		a_t = 0;
+
+		while (a_t < l)
+		{
+			if (s[s_t] == str[a_t] || s[s_t] - 32 == str[a_t])
+			{
+				s[s_t] = num[a_t];
+			}
+
+			a_t++;
+		}
+
+		s_t++;
 	}
-
-	s[i] = '\0';
-
 	return (s);
 }
