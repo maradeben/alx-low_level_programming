@@ -12,7 +12,7 @@ int in_list(int item, char list[]);
 char *cap_string(char *s)
 {
 	int i, c = 0;
-	char list[] = " ,;.!?\"(){}\t\n";
+	char list[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 
 	/* capitalize first char if letter */
 	if (s[0] >= 97 && s[0] <= 122)
