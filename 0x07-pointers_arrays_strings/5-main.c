@@ -14,5 +14,13 @@ int main(void)
 
     t = _strstr(s, f);
     printf("%s\n", t);
+    t = _strstr("First, solve the problem. Then, write the code.", "solve");
+    printf("%s\n", t);
+
+   /* t = _strstr("First, solve the problem. Then, write the code.", "School"); */
+  /*  printf("%s\n", t);*/
+
+    t = _strstr("First, solve the problem. Then, write the code.", "");
+    printf("%s\n", t);
     return (0);
 }
