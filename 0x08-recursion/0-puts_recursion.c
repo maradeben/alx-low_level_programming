@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts_recursion - puts analog
+ * _puts_recursion - puts analog
  * @s: the string to print
  * Return: None
  */
