@@ -1,13 +1,13 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
- * main - mimic putchar
- * Description: print given character
- * Return: 8 for success
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
-int main(char c)
+int _putchar(char c)
 {
-	putchar(c);
-	return (0);
+	return (write(1, &c, 1));
 }
