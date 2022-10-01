@@ -22,18 +22,20 @@ int main(int argc, char *argv[])
 	else
 		change = atoi(argv[1]);
 
-	if (change < 0)
+	if (change <= 0)
 		printf("0\n");
-
-	for (i = 0; i < 5; i++)
+	else
 	{
-		if (change >= c[i] && change > 0)
+		for (i = 0; i < 5; i++)
 		{
-			coins += change / c[i];
-			change = change % c[i];
+			if (change >= c[i] && change > 0)
+			{
+				coins += change / c[i];
+				change = change % c[i];
+			}
 		}
-	}
 
-	printf("%d\n", coins);
+		printf("%d\n", coins);
+	}
 	return (0);
 }
