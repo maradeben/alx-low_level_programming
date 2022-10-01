@@ -12,7 +12,9 @@ int main(int argc, char *argv[])
 {
 	int i, result = 0, conv;
 
-	if (argc > 1)
+	if (argc == 1)
+		printf("0\n");
+	else
 	{
 		for (i = 1; i < argc; i++)
 		{
@@ -25,8 +27,7 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
+		printf("%d\n", result);
 	}
-
-	printf("%d\n", result);
 	return (0);
 }
