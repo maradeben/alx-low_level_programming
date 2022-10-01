@@ -19,7 +19,8 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			conv = atoi(argv[i]);
-			if (conv && conv > 0)
+
+			if (conv)
 				result += conv;
 			else
 			{
