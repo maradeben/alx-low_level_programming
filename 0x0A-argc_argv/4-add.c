@@ -10,14 +10,15 @@
 
 int main(int argc, char *argv[])
 {
-	int i, result = 0;
+	int i, result = 0, conv;
 
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (atoi(argv[i]))
-				result += atoi(argv[i]);
+			conv = atoi(argv[i]);
+			if (conv && conv > 0)
+				result += conv;
 			else
 			{
 				printf("Error\n");
