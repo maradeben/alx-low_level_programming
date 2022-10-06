@@ -5,6 +5,7 @@
 int all_dig(char *s);
 void _puts_recursion(char *s);
 void print_number(int n);
+int _atoi(char *s);
 
 /**
  * main - multiply two nums
@@ -27,7 +28,7 @@ int main(int argc, char *argv[])
 		_puts_recursion("Error");
 		exit(98);
 	}
-	prod = atoi(argv[1]) * atoi(argv[2]);
+	prod = _atoi(argv[1]) * _atoi(argv[2]);
 	print_number(prod);
 	_putchar('\n');
 
@@ -86,4 +87,26 @@ void print_number(int n)
 		print_number(n / 10);
 
 	_putchar(n % 10 + '0');
+}
+
+/**
+ * _atoi - atoi analog
+ * @s: string
+ * Return: int version
+ */
+
+int _atoi(char *s)
+{
+	int i = 0, res = 0, sign = 1;
+
+	if (s[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+
+	for (; s[i] != '\0'; i++)
+		res = res * 10 + s[i] - '0';
+
+	return (sign * res);
 }
