@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "main.h"
-#include <stdio.h>
 
 int all_dig(char *s);
 void _puts_recursion(char *s);
