@@ -6,7 +6,8 @@ int all_dig(char *s);
 void _puts_recursion(char *s);
 void print_number(int n);
 
-/** main - multiply two nums
+/**
+ * main - multiply two nums
  * @argc: number of arguments
  * @argv: arguments vector
  * Return: 0 on success
@@ -30,22 +31,23 @@ int main(int argc, char *argv[])
 	print_number(prod);
 	_putchar('\n');
 
-	return(0);
+	return (0);
 }
 
 
 /**
  * all_dig - check if each char of str is digit
- * s: string to check
+ * @s: string to check
  * Return: 1 or 0
  */
 int all_dig(char *s)
 {
 	int i;
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (!(s[i] >= 48 && s[i] <= 57))
-		       return (0);
+			return (0);
 	}
 	return (1);
 }
