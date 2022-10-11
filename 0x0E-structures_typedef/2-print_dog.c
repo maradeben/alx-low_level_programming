@@ -14,6 +14,8 @@ void print_dog(struct dog *d)
 	char *d_owner;
 	/* int d_age; */
 
+	if (d == NULL)
+		return;
 	if (d->name != NULL)
 		d_name = d->name;
 	else
