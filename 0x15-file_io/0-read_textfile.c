@@ -20,14 +20,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	fd = open(filename, O_RDWR);
-	if (fd < 0)
+	if (fd == -1)
 	{
 		free(buff);
 		return (0);
 	}
 
 	rd = read(fd, buff, letters);
-	if (rd < 0)
+	if (rd == -1)
 	{
 		free(buff);
 		close(fd);
@@ -35,7 +35,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	wd = write(STDOUT_FILENO, buff, letters);
-	if (wd < 0)
+	if (wd == -1)
 	{
 		free(buff);
 		close(fd);
