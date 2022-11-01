@@ -14,19 +14,33 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buff == NULL)
 		return (0);
 	if (filename == NULL)
+	{
+		free(buff);
 		return (0);
+	}
 
 	fd = open(filename, O_RDWR);
 	if (fd < 0)
+	{
+		free(buff);
 		return (0);
+	}
 
 	rd = read(fd, buff, letters);
 	if (rd < 0)
+	{
+		free(buff);
+		close(fd);
 		return (0);
+	}
 
 	wd = write(STDOUT_FILENO, buff, letters);
 	if (wd < 0)
+	{
+		free(buff);
+		close(fd);
 		return (0);
+	}
 
 	free(buff);
 	close(fd);
