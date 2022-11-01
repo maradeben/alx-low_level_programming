@@ -18,7 +18,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	len = _strlen(text_content);
-	wd = write(filename, text_content, len);
+	wd = write(fd, text_content, len);
 	if (wd == -1)
 		return (-1);
 
@@ -38,5 +38,5 @@ int _strlen(char *s)
 	if (s[0] == '\0')
 		return (0);
 	else
-		return (1 + _strlen_recursion(++s));
+		return (1 + _strlen(++s));
 }
