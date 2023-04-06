@@ -1,10 +1,11 @@
-#ifndef _HASH_TALBES_H
-#define _HASH_TABLES_H
+#ifndef _HASH_TALBES_H_
+#define _HASH_TABLES_H_
 
 /* import libraries */
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* define structs */
 /**
@@ -40,5 +41,6 @@ typedef struct hash_table_s
 hash_table_t *hash_table_create(unsigned long int size);
 unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 
-#endif /* _HASH_TABLES_H */
+#endif /* _HASH_TABLES_H_ */

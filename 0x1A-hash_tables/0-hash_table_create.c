@@ -21,7 +21,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/* allocate space for 'size' hash nodes in the table */
 	table->array = malloc(sizeof(hash_node_t *) * size);
 
-	/* initialize each node to zero */
+	/* initialize each node to null */
 	for (index = 0; index < size; index++)
 		table->array[index] = NULL;
 
