@@ -1,56 +1,75 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds an element to a hash table
- * @ht: the table to add element to
- * @key: the key to add
- * @value: the associated value
- * Return: 1 on success, 0 otherwise
-*/
+ * hash_table_set - adds an element to the hash table.
+ * @ht: hash table
+ * @key: is the key. key can not be an empty string
+ * @value: value associated with the key.
+ * Return: 1 on success, 0 on failurre
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node;
-	unsigned long int index, i;
-	char *value_cp;
-	
-	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
-		return (0);
-	
-	value_cp = strdup(value);
-	if (value_cp == NULL)
+
+hash_node_t *node;
+hash_node_t *new_node;
+unsigned long int index;
+
+if (ht == NULL || *key == '\n' || *value == '\n')
+	return (0);
+
+index = key_index((const unsigned char *)key, ht->size);
+node = ht->array[index];
+
+if (node == NULL)
+{
+	new_node = create_new_node(key, value);
+	if (new_node == NULL)
 		return (0);
 
-	for (i = 0; ht->array[i]; i++)
+	ht->array[index] = new_node;
+	return (1);
+}
+
+/*If key exists, replace value*/
+while (node != NULL)
+{
+	if (strcmp(key, node->key) == 0)
 	{
-		if (strcmp(ht->array[i]->key, key) == 0)
-		{
-			free(ht->array[i]->value);
-			ht->array[i]->value = value_cp;
-			return (1);
-		}
+		free(node->value);
+		node->value = strdup(value);
+		return (1);
 	}
+	node = node->next;
+}
+/*If key doesn't exist, create new node*/
+new_node = create_new_node(key, value);
+if (new_node == NULL)
+	return (0);
+
+new_node->next = ht->array[index];
+ht->array[index] = new_node;
+return (1);
+}
+
+/**
+ * create_new_node - create a new node
+ * @key: is the key. key can not be an empty string
+ * @value: value associated with the key.
+ * Return: 1 on success, 0 on failurre
+ */
+
+hash_node_t *create_new_node (const char *key, const char *value)
+{
+	hash_node_t *new_node;
 
 	new_node = malloc(sizeof(hash_node_t));
+
 	if (new_node == NULL)
-	{
-		free(value_cp);
-		return (0);
-	}
+		return (NULL);
 
 	new_node->key = strdup(key);
-	if (new_node->key == NULL)
-	{
-		free(new_node);
-		return(0);
-	}
+	new_node->value = strdup(value);
+	new_node->next = NULL;
 
-
-	/* compute the index */
-	index = key_index((const unsigned char *)new_node->key, ht->size);
-	new_node->value = value_cp;
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
-
-	return (1);
-
+	return (new_node);
 }
