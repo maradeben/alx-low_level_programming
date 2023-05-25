@@ -2,4 +2,4 @@ CC = gcc
 SRC = $(wildcard *.c)
 
 all : ${SRC}
-	${CC} ${SCR} -o school
+	${CC} ${SRC} -o school
